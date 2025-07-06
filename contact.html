@@ -15,6 +15,11 @@
       <a href="/" class="logo-link">
         <img src="https://images.squarespace-cdn.com/content/v1/60c4118c93bcd75f282bcad7/aa2df98f-a2f0-41a7-a355-0f9d67e88d18/BUSINESS+LOGO3.jpg?format=1500w" alt="Nick's Creations Auto Upholstery" class="logo">
       </a>
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <nav class="site-nav">
         <ul>
           <li><a href="/ncc/">Home</a></li>
@@ -156,5 +161,39 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Mobile navigation functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+      const siteNav = document.querySelector('.site-nav');
+      const body = document.body;
+
+      mobileNavToggle.addEventListener('click', function() {
+        mobileNavToggle.classList.toggle('active');
+        siteNav.classList.toggle('active');
+        body.classList.toggle('menu-open');
+      });
+
+      // Close mobile menu when clicking on a link
+      const navLinks = document.querySelectorAll('.site-nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          mobileNavToggle.classList.remove('active');
+          siteNav.classList.remove('active');
+          body.classList.remove('menu-open');
+        });
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!siteNav.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+          mobileNavToggle.classList.remove('active');
+          siteNav.classList.remove('active');
+          body.classList.remove('menu-open');
+        }
+      });
+    });
+  </script>
 </body>
 </html> 
