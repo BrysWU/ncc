@@ -1,0 +1,127 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', Arial, sans-serif;
+  color: #232323;
+  background: #fafbfc;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #ececec;
+  box-shadow: 0 2px 6px rgba(30,30,30,0.03);
+}
+.header-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+.logo-link {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 80px;
+  width: auto;
+  border-radius: 10px;
+}
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.site-nav a {
+  color: #232323;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.site-nav a.active, .site-nav a:hover {
+  background: #ffe082;
+  color: #232323;
+}
+.hero {
+  background: linear-gradient(90deg,#fffbe7 50%,#ffe082 100%);
+  padding: 4rem 0 2rem 0;
+  text-align: center;
+}
+.hero-content h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.subtitle {
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #444;
+}
+.location {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 500;
+  color: #777;
+}
+.gallery {
+  padding: 2rem 0;
+  background: #fff;
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 1.5rem;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(50,50,50,0.05);
+  transition: transform 0.2s;
+}
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+.site-footer {
+  background: #232323;
+  color: #fff;
+  padding: 2rem 0;
+}
+.footer-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.site-footer h3 {
+  margin-top: 0;
+  font-weight: 500;
+}
+.site-footer a {
+  color: #ffe082;
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
+}
+@media (max-width: 800px) {
+  .header-flex, .footer-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .logo {
+    height: 60px;
+  }
+  .gallery-grid img {
+    height: 150px;
+  }
+}
